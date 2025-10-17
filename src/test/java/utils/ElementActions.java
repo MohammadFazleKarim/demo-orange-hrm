@@ -34,6 +34,11 @@ public class ElementActions {
         actions.sendKeys(keys).perform();
     }
 
+    public void scrollToElement(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        actions.scrollToElement(element).perform();
+    }
+
     public void hoverOver(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
         actions.moveToElement(element).perform();
