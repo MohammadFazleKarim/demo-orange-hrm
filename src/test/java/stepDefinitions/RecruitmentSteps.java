@@ -1,12 +1,15 @@
 package stepDefinitions;
 
 import com.github.javafaker.Faker;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.*;
 import utils.ConfigReader;
 import utils.DriverFactory;
+
+import java.util.Map;
 
 public class RecruitmentSteps {
 
@@ -26,9 +29,12 @@ public class RecruitmentSteps {
     }
 
     @Then("Login to OrangeHRM demo as Admin \\(use the demo credentials shown on the login page)")
-    public void login_to_orange_hrm_demo_as_admin_use_the_demo_credentials_shown_on_the_login_page() {
+    public void login_to_orange_hrm_demo_as_admin_use_the_demo_credentials_shown_on_the_login_page(DataTable dataTable) {
+        Map<String, String> credentials = dataTable.asMap(String.class, String.class);
+        String username = credentials.get("username");
+        String password = credentials.get("password");
         loginPage = new LoginPage();
-        loginPage.loginToHrm("admin", "admin123");
+        loginPage.loginToHrm(username, password);
     }
 
     @Then("Open Recruitment → Candidates")
