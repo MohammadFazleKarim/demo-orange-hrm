@@ -7,6 +7,8 @@ Feature: Manage Candidates in OrangeHRM Recruitment Module
   Scenario: Add, shortlist, and manage a candidate
     Given Navigate to the OrangeHRM demo site
     Then Login to OrangeHRM demo as Admin (use the demo credentials shown on the login page)
+      | username | admin |
+      | password    | admin123 |
     Then Open Recruitment → Candidates
     Then Click Add to create a new candidate
     And Fill out the candidate form. Attach a small PDF resume if available
