@@ -23,12 +23,10 @@ It follows **Page Object Model (POM)** and BDD approach using **Cucumber**, and 
 ## **Features**
 
 - Navigate and login to OrangeHRM demo site.  
-- Add, shortlist, and manage candidates in the Recruitment module.  
-- Schedule interviews and mark results.  
+- Add and shortlist candidates in the Recruitment module.  
 - Uses **Page Object Model (POM)** for maintainability.  
 - Reusable `ElementActions` utility class for Selenium & Actions class methods.  
 - Supports file upload and few mouse & keyboard actions.  
-- Cross-browser support (Chrome, Firefox & Edge).  
 - Generates **HTML & JSON reports**.  
 
 
